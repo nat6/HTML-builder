@@ -13,7 +13,7 @@ fs.readdir(folder, { withFileTypes: true }, (err, data) => {
         .join('');
 
       fs.stat(folder + '/' + current, (err, data) => {
-        const size = Math.round((data.size / 1024) * 100) / 100 + 'kb';
+        const size = data.size / 1024 + 'kb';
         console.log(name + ' - ' + ext + ' - ' + size);
       });
     }
